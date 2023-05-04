@@ -4,7 +4,7 @@ $(document).ready(function(){
     let addQuantity = ".quantity button:nth-child(3)";
     let quantity = ".quantity input";
 
-    let currentQuantity = $(quantity).val();
+    let currentQuantity = $(quantity).parent().parent().val();
 
     $(decreaseQuantity).click(function(){
         if(currentQuantity > 0){
