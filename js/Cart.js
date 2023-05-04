@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-    let decreaseQuantity = ".quantity button:nth-child(1)";
+    let decreaseQuantity = .quantityButton.parent().parent();
     let addQuantity = ".quantity button:nth-child(3)";
     let quantity = ".quantity input";
 
