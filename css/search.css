@@ -1,60 +1,66 @@
-.head1 {
-    background-color: #FFE77A;
-    height: 200px;
-    width: 100%;
-    border-radius: 20px;
+body {
+    margin: 1px;
+    padding: 1px;
+    margin-top: 0;
 }
+  
 
-/*logo*/
 #logo {
-    width: 275px;
-    height: 150px;
-    margin-top: 20px;
-    margin-left: 20px;
-    border-radius: 20px;
+	width: 150px;
 }
 
-
-/*navigation_locator*/
-.navigation {
-    margin-top: 30px;
-    float: right;
-    display: flex;
-    padding: 20px;
+.Header {
+	object-fit: cover;
+	height: 120px;
+	background: #FFE77A;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	border-radius: 0px 0px 30px 30px;
 }
 
-/*searchbar*/
-#searchbar {
-    width: 300px;
-    height: 80px;
-    border-radius: 50px;
-    margin-right: 10px;
+.TopRightNavigation {
+	float: right;
+	margin-right: 10px;
+	margin-top: 5px;
+	display: block;
 }
 
-/*navigation_buttons*/
-.inside_btn {
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#SearchBox {
+	box-sizing: border-box;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	height: 55px;
+	border-radius: 50px;
+	border: none;
+	padding: 20px;
+	vertical-align: middle;
 }
 
-span {
-    font-weight: bold;
-    color: #ffffff;
+.TopRightNavigation button{
+	box-sizing: border-box;
+	width: 55px;
+	height: 55px;
+	background: #2C5F2D;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	border-radius: 10px;
+	border: none;
+	vertical-align: middle;
+	cursor: pointer;
 }
 
-.btn {
-    width: 80px;
-    height: 80px;
-    background-color: #17495d;
-    border-radius: 8px;
-    margin-right: 5px;
-    cursor: pointer;
+.TopRightNavigationIcons {
+	width: 70%;
+}
+
+.ButtonText {
+	margin: 0;
+	font-family: 'Arial';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	color: #FFFFFF;
 }
 
 .leftpart {
+    margin-top: 20px;
     background-color: #ffffff;
     padding: 20px;
     margin-bottom: 20px;
@@ -162,6 +168,7 @@ select {
 /* for product */
 .prodcontainer {
     padding-top: 180px;
+    margin-left: 100px;
     flex: right;
 }
 
