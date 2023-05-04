@@ -19,8 +19,7 @@ window.onload = function() {
   }
 
 function updateButtonText() {
-    const searchText = document.getElementById("searchbar").value;
-    const button = document.getElementById("buttonText");
+    const searchText = document.getElementById("SearchBox").value;
     const searchResult = document.getElementById("searchResultText");
     const heading = document.getElementById("searchHeading");
 

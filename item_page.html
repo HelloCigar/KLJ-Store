@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Item Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/item_page.css">
+</head>
+<body>
+    <div class="Header">
+        <a href="Home.html">
+            <img src="Images/storeLogo.png" id="logo">
+        </a>
+        <div class="TopRightNavigation">
+            <input type="text" name="searchValue" id="SearchBox" placeholder="Search for items">
+            <button id="Search" onclick="updateButtonText()">
+                <a href="#">
+                <img class="TopRightNavigationIcons" src="Icons/search_icon.png">
+                <h2 class="ButtonText">Search</h2>
+                </a>
+            </button>
+            <button id="Cart">
+                <a href="Cart.html">
+                <img class="TopRightNavigationIcons" src="Icons/shopping_cart.png">
+                <h2 class="ButtonText">Cart</h2>
+                </a>
+            </button>
+            <button id="Account">
+                <a href="Account.html">
+                <img class="TopRightNavigationIcons" src="Icons/account_icon.png">
+                <h2 class="ButtonText">Account</h2>
+                </a> 
+            </button>
+            <button id="FAQs">
+                <a href="FAQs.html">
+                <img class="TopRightNavigationIcons" src="Icons/faq_icon.png">
+                <h2 class="ButtonText">FAQs</h2>
+                </a>
+            </button>
+        </div>
+    </div>
+    <div class = "card-wrapper">
+        <div class = "card">
+            <!-- card left -->
+            <div class = "product-imgs">
+            <div class = "img-display">
+                <div class = "img-showcase">
+                    <img src = "Images/patatas.png" alt = "patatas image">
+                    <img src = "Images/patatas1.png" alt = "patatas image">
+                    <img src = "Images/patatas2.png" alt = "patatas image">
+                    <img src = "Images/patatas3.png" alt = "patatas image">
+                </div>
+            </div>
+            <div class = "img-select">
+                <div class = "img-item">
+                    <a href = "#" data-id = "1">
+                        <img src = "Images/patatas.png" alt = "patatas image">
+                    </a>
+                </div>
+                <div class = "img-item">
+                    <a href = "#" data-id = "2">
+                        <img src = "Images/patatas1.png" alt = "patatas image">
+                    </a>
+                </div>
+                <div class = "img-item">
+                    <a href = "#" data-id = "3">
+                        <img src = "Images/patatas2.png" alt = "patatas image">
+                    </a>
+                </div>
+                <div class = "img-item">
+                    <a href = "#" data-id = "4">
+                        <img src = "Images/patatas3.png" alt = "patatas image">
+                    </a>
+                </div>
+            </div>
+            </div>
+              <!-- card right -->
+              <div class = "product-content">
+                <h2 class = "product-title">PATATAS</h2>
+                <a href = "#" class = "product-link">Visit KJL Store</a>
+                <div class = "product-rating">
+                  <i class = "fa fa-star checked"></i>
+                  <i class = "fa fa-star checked"></i>
+                  <i class = "fa fa-star checked"></i>
+                  <i class = "fa fa-star checked"></i>
+                  <i class = "fa fa-star checked"></i>
+                  <span>5(21)</span>
+                </div>
+      
+                <div class = "product-price">
+                  <p class = "price">Price: <span>$2.00</span></p>
+                </div>
+      
+                <div id="quantity">
+                  <label for="Quantity" class="inp">Quantity:</label>
+                  <br>
+                  <input type="number" id="numitems" name="items" required><br>
+                  <button id="addcart" onclick="add_cart()">ADD TO CART</button>
+                </div>
+                
+                
+      
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <script src="item_page.js"></script>
+
+    <div class = "product-detail">
+        <h2>Product Descriptions: </h2>
+        <br>
+        <h2>PATATAS</h2>
+        <p>High quality na patatas</p>
+        <p>Reasons why you need to buy patatas to us: </p>
+        <ul>
+            <li>Crispy</li>
+            <li>Goods</li>
+            <li>Shiny</li>
+            <li>Cheap</li>
+            <li>Galing sa pinas</li>
+        </ul>
+    </div>
+    
+    <div id="reviews">
+        <h2>Customer Reviews:</h2>
+        <br>
+        <div class="rev">
+            <div class = "product-rating">
+                <i class = "fa fa-star checked"></i>
+                <i class = "fa fa-star checked"></i>
+                <i class = "fa fa-star checked"></i>
+                <i class = "fa fa-star checked"></i>
+                <i class = "fa fa-star checked"></i>
+                <span>by anonymous 01/01/2023</span>
+            </div>
+            <p>Good quality patatas</p>
+        </div>
+
+        <div class="rev">
+            <div class = "product-rating">
+                <i class = "fa fa-star checked"></i>
+                <i class = "fa fa-star checked"></i>
+                <i class = "fa fa-star checked"></i>
+                <i class = "fa fa-star checked"></i>
+                <i class = "fa fa-star checked"></i>
+                <span>by anonymous 01/05/2023</span>
+            </div>
+            <p>Nice potatoes</p>
+        </div>
+
+        <div class="rev">
+            <div class = "product-rating">
+                <i class = "fa fa-star checked"></i>
+                <i class = "fa fa-star"></i>
+                <i class = "fa fa-star"></i>
+                <i class = "fa fa-star"></i>
+                <i class = "fa fa-star"></i>
+                <span>by anonymous 01/01/2023</span>
+            </div>
+            <p>rotten patatas</p>
+        </div>
+        <div id="see"><a href="#">see all reviews</a></div>
+    </div>
+    
+
+</body>
+</html>
