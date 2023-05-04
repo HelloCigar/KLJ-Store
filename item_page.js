@@ -2,8 +2,7 @@
 const imgs = document.querySelectorAll('.img-select a');
 const imgBtns = [...imgs];
 
-// Get the initial number of items selected from the input element
-let items = document.getElementById("numitems").value;
+
 
 // Set the initial image ID to 1
 let imgId = 1;
@@ -30,10 +29,20 @@ function slideImage(){
 window.addEventListener('resize', slideImage);
 
 
-//not yet finish
-function add_cart() {
+// Get the initial number of items selected from the input element
+let items = parseInt(document.getElementById("numitems").value);
+
+// Add an event listener to the input element to update the value of items
+document.getElementById("numitems").addEventListener("change", function() {
+    items = parseInt(this.value);
+});
+
+// Add an event listener to the "Add to Cart" button
+document.getElementById("addcart").addEventListener("click", function() {
     if (items <= 0 || items > 100) {
         alert("Please enter a valid item quantity between 1 and 100.");
         return;
+    } else {
+        window.location.href = "Cart.html";
     }
-}
+});
