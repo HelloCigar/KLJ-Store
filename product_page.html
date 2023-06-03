@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Page</title>
+  <style>
+    body {
+      margin: 1px;
+      padding: 1px;
+      margin-top: 0;
+    }
+
+    #logo {
+      width: 150px;
+    }
+
+    .Header {
+      object-fit: cover;
+      height: 120px;
+      background: #FFE77A;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+      border-radius: 0px 0px 30px 30px;
+    }
+
+    .TopRightNavigation {
+      float: right;
+      margin-right: 10px;
+      margin-top: 5px;
+      display: block;
+    }
+
+    #SearchBox {
+      box-sizing: border-box;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+      height: 55px;
+      border-radius: 50px;
+      border: none;
+      padding: 20px;
+      vertical-align: middle;
+    }
+
+    .TopRightNavigation button{
+      box-sizing: border-box;
+      width: 55px;
+      height: 55px;
+      background: #2C5F2D;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+      border-radius: 10px;
+      border: none;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+
+    .TopRightNavigationIcons {
+      width: 70%;
+    }
+
+    .ButtonText {
+      margin: 0;
+      font-family: 'Arial';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      color: #FFFFFF;
+    }
+
+    .product-container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .product-images {
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .big-image {
+      width: 100%;
+      height: auto;
+      border: 10px solid #FFE77A;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .small-images {
+      margin-top: 10px;
+    }
+
+    .small-image {
+      width: 70px;
+      height: auto;
+      margin-right: 10px;
+      cursor: pointer;
+      border: 5px solid #FFE77A;
+      border-radius: 5px;
+    }
+
+    .product-details {
+      flex: 1;
+      padding: 0 30px; 
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .product-name {
+      margin-top: 30px;
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .star {
+      color: gold;
+      margin-right: 5px;
+    }
+
+    .price {
+      margin-top: 10px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .quantity {
+      margin-top: 20px;
+    }
+
+    .quantity input {
+      width: 50px;
+      height: 30px;
+      font-size: 16px;
+      padding: 5px;
+      text-align: center;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    #addcart {
+      margin-top: 20px;
+      background-color: #FFE77A;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .description {
+      margin-top: 30px;
+      font-size: 16px;
+    }
+
+    .customer-reviews {
+      margin-top: 20px;
+      padding-left: 250px;
+      max-width: 1000px;
+    }
+
+    .review {
+      margin-bottom: 20px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      background-color: #f5f5f5;
+    }
+
+    .review-rating {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .star {
+      color: gold;
+      margin-right: 2px;
+    }
+
+    .review-name {
+      font-weight: bold;
+      margin-left: 5px;
+    }
+
+    .review-date {
+      font-size: 12px;
+      margin-left: 5px;
+    }
+
+    .review-comment {
+      margin-top: 5px;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    .see-all-reviews {
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="Header">
+    <a href="Home.html">
+      <img src="Images/storeLogo.png" id="logo">
+    </a>
+    <div class="TopRightNavigation">
+      <input type="text" name="searchValue" id="SearchBox" placeholder="Search for items">
+      <button id="Search">
+        <a href="Search.html">
+          <img class="TopRightNavigationIcons" src="Icons/search_icon.png">
+          <h2 class="ButtonText">Search</h2>
+        </a>
+      </button>
+      <button id="Cart">
+        <a href="Cart.html">
+          <img class="TopRightNavigationIcons" src="Icons/shopping_cart.png">
+          <h2 class="ButtonText">Cart</h2>
+        </a>
+      </button>
+      <button id="Account">
+        <a href="Account.html">
+          <img class="TopRightNavigationIcons" src="Icons/account_icon.png">
+          <h2 class="ButtonText">Account</h2>
+        </a>
+      </button>
+      <button id="FAQs">
+        <a href="FAQs.html">
+          <img class="TopRightNavigationIcons" src="Icons/faq_icon.png">
+          <h2 class="ButtonText">FAQs</h2>
+        </a>
+      </button>
+    </div>
+  </div>
+
+  <div class="product-container">
+    <div class="product-images">
+      <img src="images/patatas.png" id="big-image" class="big-image" alt="Big Product Image">
+      <div class="small-images">
+        <img src="images/patatas1.png" class="small-image" onclick="changeImage('images/patatas1.png')" alt="Small Product Image 1">
+        <img src="images/patatas2.png" class="small-image" onclick="changeImage('images/patatas2.png')" alt="Small Product Image 2">
+        <img src="images/patatas3.png" class="small-image" onclick="changeImage('images/patatas3.png')" alt="Small Product Image 3">
+        <img src="images/patatas.png" class="small-image" onclick="changeImage('images/patatas.png')" alt="Small Product Image 4">
+      </div>
+    </div>
+    <div class="product-details">
+      <div class="product-name">Product Name</div>
+      <div class="rating">
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+      </div>
+      <div class="price">$99.99</div>
+      <div class="quantity">
+        Quantity <br> <input type="number" value="1" min="1">
+      </div>
+      <button id="addcart">ADD TO CART</button>
+      <div class="description"><strong>Product Description</strong><br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</div>
+    </div>
+  </div>
+  <div class="customer-reviews">
+    <strong>Customer Reviews</strong><br><br>
+        <div class="review">
+          <div class="review-rating">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="review-name">Tanjiro</span>
+            <span class="review-date"> May 1, 2023</span>
+          </div>
+          <div class="review-comment">
+            This is a great product. I highly recommend it.
+          </div>
+        </div>
+        <div class="review">
+          <div class="review-rating">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9734;</span>
+            <span class="review-name">Nezuko</span>
+            <span class="review-date"> April 28, 2023</span>
+          </div>
+          <div class="review-comment">
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+          </div>
+        </div>
+        <div class="review">
+          <div class="review-rating">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9734;</span>
+            <span class="star">&#9734;</span>
+            <span class="review-name">Muzan</span>
+            <span class="review-date"> December 25, 2022</span>
+          </div>
+          <div class="review-comment">
+            Good product, but it could be better.
+          </div>
+      </div>
+    <div class="see-all-reviews">
+        <a href="Reviews.html">See all reviews ></a>
+    </div>
+
+  <script>
+    function changeImage(imageUrl) {
+      document.getElementById("big-image").src = imageUrl;
+    }
+  </script>
+</body>
+</html>
