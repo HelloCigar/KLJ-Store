@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      margin: 1px;
+      padding: 1px;
+      margin-top: 0;
+    }
+
+    #logo {
+      width: 150px;
+    }
+
+    .Header {
+      object-fit: cover;
+      height: 120px;
+      background: #FFE77A;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+      border-radius: 0px 0px 30px 30px;
+    }
+
+    .TopRightNavigation {
+      float: right;
+      margin-right: 10px;
+      margin-top: 5px;
+      display: block;
+    }
+
+    #SearchBox {
+      box-sizing: border-box;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+      height: 55px;
+      border-radius: 50px;
+      border: none;
+      padding: 20px;
+      vertical-align: middle;
+    }
+
+    .TopRightNavigation button{
+      box-sizing: border-box;
+      width: 55px;
+      height: 55px;
+      background: #2C5F2D;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+      border-radius: 10px;
+      border: none;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+
+    .TopRightNavigationIcons {
+      width: 70%;
+    }
+
+    .ButtonText {
+      margin: 0;
+      font-family: 'Arial';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      color: #FFFFFF;
+    }
+
+    #profile-container {
+      width: 800px;
+      margin: auto;
+      padding: 20px;
+      background-color: #f2f2f2;
+      text-align: center;
+      background: #FFE77A;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 30px;
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #profile-picture {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    #profile-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #username {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .section {
+      margin-top: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    h2 {
+      margin: 0;
+      color: #333333;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .order-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .order-item img {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+
+    .order-details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .order-details p {
+      margin: 0;
+      color: #666666;
+      font-size: 14px;
+    }
+
+    .order-price {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .review-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .review-item img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+
+    .review-details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .review-details p {
+      margin: 0;
+      color: #666666;
+      font-size: 14px;
+    }
+    
+    .star-rating {
+      display: inline-block;
+    }
+    
+    .star-rating input[type="radio"] {
+      display: none;
+    }
+    
+    .star-rating label {
+      color: #FFC107;
+      font-size: 20px;
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      cursor: pointer;
+    }
+    
+    .star-rating label:before {
+      content: '\2605';
+      margin-right: 5px;
+    }
+    
+    .star-rating input[type="radio"]:checked ~ label:before {
+      content: '\2605';
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var profilePicture = document.getElementById('profile-picture');
+      var fileInput = document.getElementById('image-upload');
+
+      profilePicture.addEventListener('click', function() {
+        fileInput.click();
+      });
+
+      fileInput.addEventListener('change', function(event) {
+        var file = event.target.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+          document.getElementById('profile-image').setAttribute('src', e.target.result);
+        };
+
+        reader.readAsDataURL(file);
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="Header">
+    <a href="Home.html">
+      <img src="Images/storeLogo.png" id="logo">
+    </a>
+    <div class="TopRightNavigation">
+      <input type="text" name="searchValue" id="SearchBox" placeholder="Search for items">
+      <button id="Search">
+        <a href="Search.html">
+          <img class="TopRightNavigationIcons" src="Icons/search_icon.png">
+          <h2 class="ButtonText">Search</h2>
+        </a>
+      </button>
+      <button id="Cart">
+        <a href="Cart.html">
+          <img class="TopRightNavigationIcons" src="Icons/shopping_cart.png">
+          <h2 class="ButtonText">Cart</h2>
+        </a>
+      </button>
+      <button id="Account">
+        <a href="Account.html">
+          <img class="TopRightNavigationIcons" src="Icons/account_icon.png">
+          <h2 class="ButtonText">Account</h2>
+        </a>
+      </button>
+      <button id="FAQs">
+        <a href="FAQs.html">
+          <img class="TopRightNavigationIcons" src="Icons/faq_icon.png">
+          <h2 class="ButtonText">FAQs</h2>
+        </a>
+      </button>
+    </div>
+  </div>
+
+  <div id="profile-container">
+    <div id="profile-picture">
+      <img id="profile-image" src="Images/upload.png" alt="Profile Picture">
+      <input type="file" id="image-upload" style="display: none;">
+    </div>
+
+    <div id="username">
+      <h2>KLJStore</h2>
+    </div>
+
+    <div class="section" id="recent-reviews">
+      <h2>Recent Reviews</h2>
+      <div class="review-item">
+        <img src="https://via.placeholder.com/50" alt="User Image">
+        <div class="review-details">
+          <p>Review 1</p>
+          <p>Product Name</p>
+          <p>Review Date: May 22, 2023</p>
+        </div>
+        <div class="star-rating">
+          <input type="radio" id="star1" name="rating" value="1">
+          <label for="star1"></label>
+          <input type="radio" id="star2" name="rating" value="2">
+          <label for="star2"></label>
+          <input type="radio" id="star3" name="rating" value="3">
+          <label for="star3"></label>
+          <input type="radio" id="star4" name="rating" value="4">
+          <label for="star4"></label>
+          <input type="radio" id="star5" name="rating" value="5">
+          <label for="star5"></label>
+        </div>
+      </div>
+      <div class="review-item">
+        <img src="https://via.placeholder.com/50" alt="User Image">
+        <div class="review-details">
+          <p>Review 2</p>
+          <p>Product Name</p>
+          <p>Review Date: May 21, 2023</p>
+        </div>
+        <div class="star-rating">
+          <input type="radio" id="star6" name="rating" value="1">
+          <label for="star6"></label>
+          <input type="radio" id="star7" name="rating" value="2">
+          <label for="star7"></label>
+          <input type="radio" id="star8" name="rating" value="3">
+          <label for="star8"></label>
+          <input type="radio" id="star9" name="rating" value="4">
+          <label for="star9"></label>
+          <input type="radio" id="star10" name="rating" value="5">
+          <label for="star10"></label>
+        </div>
+      </div>
+      <div class="review-item">
+        <img src="https://via.placeholder.com/50" alt="User Image">
+        <div class="review-details">
+          <p>Review 3</p>
+          <p>Product Name</p>
+          <p>Review Date: May 20, 2023</p>
+        </div>
+        <div class="star-rating">
+          <input type="radio" id="star11" name="rating" value="1">
+          <label for="star11"></label>
+          <input type="radio" id="star12" name="rating" value="2">
+          <label for="star12"></label>
+          <input type="radio" id="star13" name="rating" value="3">
+          <label for="star13"></label>
+          <input type="radio" id="star14" name="rating" value="4">
+          <label for="star14"></label>
+          <input type="radio" id="star15" name="rating" value="5">
+          <label for="star15"></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="order-history">
+      <h2>Order History</h2>
+      <div class="order-item">
+        <img src="https://via.placeholder.com/80" alt="Product Image">
+        <div class="order-details">
+          <p>Order Date: May 21, 2023</p>
+          <p>Product Name</p>
+          <p>Quantity: 1</p>
+          <p>Price: $10.99</p>
+        </div>
+        <p class="order-price">$10.99</p>
+      </div>
+      <div class="order-item">
+        <img src="https://via.placeholder.com/80" alt="Product Image">
+        <div class="order-details">
+          <p>Order Date: May 20, 2023</p>
+          <p>Product Name</p>
+          <p>Quantity: 2</p>
+          <p>Price: $19.99</p>
+        </div>
+        <p class="order-price">$19.99</p>
+      </div>
+      <div class="order-item">
+        <img src="https://via.placeholder.com/80" alt="Product Image">
+        <div class="order-details">
+          <p>Order Date: May 19, 2023</p>
+          <p>Product Name</p>
+          <p>Quantity: 1</p>
+          <p>Price: $14.99</p>
+        </div>
+        <p class="order-price">$14.99</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
